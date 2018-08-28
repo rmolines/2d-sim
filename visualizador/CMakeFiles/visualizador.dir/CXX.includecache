@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rmolines/Documents/2d-sim/visualizador/body.h
+
+/home/rmolines/Documents/2d-sim/visualizador/main.cpp
+visualizador.h
+/home/rmolines/Documents/2d-sim/visualizador/visualizador.h
+vector
+-
+random
+-
+
+/home/rmolines/Documents/2d-sim/visualizador/visualizador.cpp
+visualizador.h
+/home/rmolines/Documents/2d-sim/visualizador/visualizador.h
+SDL2/SDL.h
+/home/rmolines/Documents/2d-sim/visualizador/SDL2/SDL.h
+SDL2/SDL2_gfxPrimitives.h
+/home/rmolines/Documents/2d-sim/visualizador/SDL2/SDL2_gfxPrimitives.h
+stdio.h
+-
+chrono
+-
+math.h
+/home/rmolines/Documents/2d-sim/visualizador/math.h
+
+/home/rmolines/Documents/2d-sim/visualizador/visualizador.h
+SDL2/SDL.h
+/home/rmolines/Documents/2d-sim/visualizador/SDL2/SDL.h
+body.h
+/home/rmolines/Documents/2d-sim/visualizador/body.h
+vector
+-
+
