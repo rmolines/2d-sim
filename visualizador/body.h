@@ -34,9 +34,16 @@ typedef struct _ball ball;
 
 struct _ball {
     int id;
+    double radius, mass;
     double x, y;
     double vx, vy;
-    double mass, radius;
     double dist;
     ball *ball_col;
+};
+
+
+
+typedef struct _sim simul;
+struct _sim {
+  double w, h, mu, n, alpha_w, alpha_b;
 };

@@ -47,7 +47,7 @@ public:
     long iter;
     double delta_t;
 
-    Visualizador(std::vector<ball> &bodies, int field_width, int field_height, double delta_t);
+    Visualizador(std::vector<ball> &bodies, int field_width, int field_height, double delta_t, simul &sim);
     ~Visualizador();
 
     void do_iteration();
@@ -60,6 +60,7 @@ private:
     int field_width, field_height;
     std::vector<ball> &bodies;
     std::vector<ball> collided;
+    simul sim;
 
     const int max_dimension = 1400;
 
@@ -70,9 +71,13 @@ private:
     void check_collision();
     void do_collision();
     void death_func(ball *ballp1, ball *ballp2);
+    void modelo2(ball *ballp1, ball *ballp2);
     double calc_mod(double vx, double vy);
     double calc_theta(double vx, double mod);
-    void print_ball(ball ball, int i);
+    void print_ball(ball ball);
+    double calc_delta_theta(ball &ball1, ball &ball2);
+    void update_v(std::vector<ball> &balls);
+
 
 
 };
