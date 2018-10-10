@@ -1,3 +1,3 @@
-/home/rmolines/Documents/2d-sim/visualizador/CMakeFiles/rebuild_cache.dir
-/home/rmolines/Documents/2d-sim/visualizador/CMakeFiles/visualizador.dir
-/home/rmolines/Documents/2d-sim/visualizador/CMakeFiles/edit_cache.dir
+/home/rmolines/github/2d-sim/visualizador/CMakeFiles/rebuild_cache.dir
+/home/rmolines/github/2d-sim/visualizador/CMakeFiles/visualizador.dir
+/home/rmolines/github/2d-sim/visualizador/CMakeFiles/edit_cache.dir

@@ -1,1 +1,1 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/visualizador.dir/main.cpp.o CMakeFiles/visualizador.dir/visualizador.cpp.o  -o visualizador -lSDL2 -lSDL2_gfx -lSDL2 -lSDL2_gfx 
+/usr/bin/c++    -rdynamic CMakeFiles/visualizador.dir/main.cpp.o CMakeFiles/visualizador.dir/visualizador.cpp.o  -o visualizador -lSDL2 -lSDL2_gfx -lSDL2 -lSDL2_gfx 

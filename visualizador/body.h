@@ -30,6 +30,8 @@
  * visualizador. 
  */
 
+#include <string>
+
 typedef struct _ball ball;
 
 struct _ball {
@@ -46,4 +48,6 @@ struct _ball {
 typedef struct _sim simul;
 struct _sim {
   double w, h, mu, n, alpha_w, alpha_b;
+  int gui, model;
+  std::string s, argv;
 };

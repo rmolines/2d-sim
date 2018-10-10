@@ -52,6 +52,9 @@ public:
 
     void do_iteration();
     void run();
+    void gui_run();
+    void results();
+
 
 private:
     SDL_Window *win;
@@ -73,11 +76,11 @@ private:
     void death_func(ball *ballp1, ball *ballp2);
     void modelo2(ball *ballp1, ball *ballp2);
     double calc_mod(double vx, double vy);
-    double calc_theta(double vx, double mod);
-    void print_ball(ball ball);
+    double calc_theta(double vx, double vy, double mod);
+    void print_ball(int id);
     double calc_delta_theta(ball &ball1, ball &ball2);
     void update_v(std::vector<ball> &balls);
-
+    void elastic_collision(ball *ballp1, ball *ballp2);
 
 
 };

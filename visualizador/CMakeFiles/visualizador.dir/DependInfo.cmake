@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/rmolines/Documents/2d-sim/visualizador/main.cpp" "/home/rmolines/Documents/2d-sim/visualizador/CMakeFiles/visualizador.dir/main.cpp.o"
-  "/home/rmolines/Documents/2d-sim/visualizador/visualizador.cpp" "/home/rmolines/Documents/2d-sim/visualizador/CMakeFiles/visualizador.dir/visualizador.cpp.o"
+  "/home/rmolines/github/2d-sim/visualizador/main.cpp" "/home/rmolines/github/2d-sim/visualizador/CMakeFiles/visualizador.dir/main.cpp.o"
+  "/home/rmolines/github/2d-sim/visualizador/visualizador.cpp" "/home/rmolines/github/2d-sim/visualizador/CMakeFiles/visualizador.dir/visualizador.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
