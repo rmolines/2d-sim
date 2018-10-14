@@ -84,7 +84,7 @@ elif (results.s == "results"):
 
     avg = [[0]*4]*4
 
-    for d in len(range(n_balls)):
+    for d in range(len(n_balls)):
         ind = -1
         for i in types:
             ind += 1
