@@ -184,6 +184,9 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
+//No help, variable specified on the command line.
+STRATEGY:UNINITIALIZED=seq
+
 //Value Computed by CMake
 visualizador_BINARY_DIR:STATIC=/home/rmolines/github/2d-sim/visualizador
 

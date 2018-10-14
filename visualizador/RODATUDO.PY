@@ -80,127 +80,39 @@ elif (results.s == "results"):
     os.system(command % ("seq", float(results.delta_t), float(results.gui), "seq", float(results.model), filename % ("seq")))
 
     n_balls = [50**2, 70**2, 90**2, 110**2] 
+    types = ["best", "omp", "simd", "seq"]
 
     avg = [[0]*4]*4
 
-    ind = -1
-    for i in n_balls:
-        ind += 1
-        counter = 0
-        sum = 0.0
-        with open('./results/-s=best -gui=2 -model=0 -n_balls=%d.csv'%(i)) as csvfile:
-            spamreader = csv.reader(csvfile)
-            for row in spamreader:
-                counter += 1
-                sum += float(row[0])
-            avg [0][ind] = sum/counter
+    for d in len(range(n_balls)):
+        ind = -1
+        for i in types:
+            ind += 1
+            counter = 0
+            sum = 0.0
+            with open('./results/-s=%s -gui=2 -model=0 -n_balls=%d.csv'%(i, n_balls[d])) as csvfile:
+                spamreader = csv.reader(csvfile)
+                for row in spamreader:
+                    counter += 1
+                    sum += float(row[0])
+                avg [d][ind] = sum/counter
 
-    fig, ax = plt.subplots()
-    ind = range(len(avg[0]))
-    b, o, si, se = plt.bar(ind, avg[0])
+        fig, ax = plt.subplots()
+        ind = range(len(avg[0]))
+        b, o, si, se = plt.bar(ind, avg[d])
 
-    b.set_facecolor('r')
-    o.set_facecolor('g')
-    si.set_facecolor('b')
-    se.set_facecolor('y')
-    ax.set_xticks(ind)
-    ax.set_xticklabels(['Best', 'OMP', 'SIMD', 'Seq'])
-    ax.set_ylabel('Tempo(s)')
-    ax.set_title('Tipo de compilação com 2500 bolinhas') 
-    fig.savefig('./results-time/2500.jpg')   
-    plt.close(fig)
-
-
-
-
-    ind = -1
-    for i in n_balls:
-        ind += 1
-        counter = 0
-        sum = 0.0
-        with open('./results/-s=omp -gui=2 -model=0 -n_balls=%d.csv'%(i)) as csvfile:
-            spamreader = csv.reader(csvfile)
-            for row in spamreader:
-                counter += 1
-                sum += float(row[0])
-
-            avg [1][ind] = sum/counter
-
-    fig, ax = plt.subplots()
-    ind = range(len(avg[0]))
-    b, o, si, se = plt.bar(ind, avg[1])
-
-    b.set_facecolor('r')
-    o.set_facecolor('g')
-    si.set_facecolor('b')
-    se.set_facecolor('y')
-    ax.set_xticks(ind)
-    ax.set_xticklabels(['Best', 'OMP', 'SIMD', 'Seq'])
-    # ax.set_ylim([0, 100])
-    ax.set_ylabel('Tempo(s)')
-    ax.set_title('Tipo de compilação com 4900 bolinhas') 
-    fig.savefig('./results-time/4900.jpg')   
-    plt.close(fig)
+        b.set_facecolor('r')
+        o.set_facecolor('g')
+        si.set_facecolor('b')
+        se.set_facecolor('y')
+        ax.set_xticks(ind)
+        ax.set_xticklabels(['Best', 'OMP', 'SIMD', 'Seq'])
+        ax.set_ylabel('Tempo(s)')
+        ax.set_title('Tipo de compilação com %d bolinhas'%(n_balls[d])) 
+        fig.savefig('./results-time/%d.jpg'%(n_balls[d]))   
+        plt.close(fig)
 
 
-    ind = -1
-    for i in n_balls:
-        ind += 1
-        counter = 0
-        sum = 0.0
-        with open('./results/-s=simd -gui=2 -model=0 -n_balls=%d.csv'%(i)) as csvfile:
-            spamreader = csv.reader(csvfile)
-            for row in spamreader:
-                counter += 1
-                sum += float(row[0])
-
-            avg [2][ind] = sum/counter
-
-    fig, ax = plt.subplots()
-    ind = range(len(avg[0]))
-    b, o, si, se = plt.bar(ind, avg[2])
-
-    b.set_facecolor('r')
-    o.set_facecolor('g')
-    si.set_facecolor('b')
-    se.set_facecolor('y')
-    ax.set_xticks(ind)
-    ax.set_xticklabels(['Best', 'OMP', 'SIMD', 'Seq'])
-    # ax.set_ylim([0, 100])
-    ax.set_ylabel('Tempo(s)')
-    ax.set_title('Tipo de compilação com 8100 bolinhas') 
-    fig.savefig('./results-time/8100.jpg')   
-    plt.close(fig)
-
-
-    ind = -1
-    for i in n_balls:
-        ind += 1
-        counter = 0
-        sum = 0.0
-        with open('./results/-s=seq -gui=2 -model=0 -n_balls=%d.csv'%(i)) as csvfile:
-            spamreader = csv.reader(csvfile)
-            for row in spamreader:
-                counter += 1
-                sum += float(row[0])
-
-            avg [3][ind] = sum/counter
-    
-    fig, ax = plt.subplots()
-    ind = range(len(avg[0]))
-    b, o, si, se = plt.bar(ind, avg[3])
-
-    b.set_facecolor('r')
-    o.set_facecolor('g')
-    si.set_facecolor('b')
-    se.set_facecolor('y')
-    ax.set_xticks(ind)
-    ax.set_xticklabels(['Best', 'OMP', 'SIMD', 'Seq'])
-    # ax.set_ylim([0, 100])
-    ax.set_ylabel('Tempo(s)')
-    ax.set_title('Tipo de compilação com 12100 bolinhas') 
-    fig.savefig('./results-time/12100.jpg')   
-    plt.close(fig)
 
 
     percent = [[0]*3]*4
